@@ -10,6 +10,15 @@
             <div class="d-flex justify-content-end mb-1">
                 <a asp-action="Create" asp-controller="DailyExpense"><i class="bi bi-plus-lg btn btn-success "></i></a>
             </div>
+            <form asp-controller="Expenses" asp-action="index">
+            <div class="d-flex justify-content-end mb-1">
+                <label class="px-2">Form</label>
+                <input style="width:300px" name="from" id="from" class="form-control form-control-sm mr-1" />
+                <label class="px-2">To</label>
+                <input style="width:300px" name="to" id="to" class="form-control form-control-sm mr-1" />
+                <button type="submit" class="btn btn-secondary btn-sm">Show</button>
+            </div>
+            </form> 
             <table class="table table-hover">
                 <thead>
                     <tr class="text-center">
@@ -37,8 +46,26 @@
     </div>
 
 </div>
+
 @section styles {
-    <link href="~/libs/icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/libs/datepicker/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
 }
+@section scripts {
+    <script src="~/libs/jquery/jquery.min.js"></script>
+    <script src="~/libs/validation/jquery.validate.min.js"></script>
+    <script src="~/libs/validation/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/libs/datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script>
+    $(() => {
+        $("#from").datepicker({
+            format: 'yyyy-mm-dd'
+        });
+        $("#to").datepicker({
+            format: 'yyyy-mm-dd'
+        });
+    })
+    </script>
+}
+
 
 
