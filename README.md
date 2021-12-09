@@ -1,3 +1,11 @@
+ ASP.NET Core MVC.
+ ASP.NET Core Framework 3.5 or 5.
+ Entity Framework Core.
+ MS SQL server.
+ C# Programming Language.
+ Bootstrap 4 or 5 CSS Framework.
+ Code-First approach of system development.
+
 # ExpenseTracker
 Please do the steps before running
 1. Go to <Solution Name>/<Project Name> Folder
