@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ExpenseCategory>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="offset-sm-2 col-6 shadow p-3 mb-5 bg-white rounded">
+        <div class="d-flex justify-content-end mb-1">
+            <div class="col-11 "><h3>Expnese Categories</h3></div>
+            <div class="col-1 justify-content-end">
+                <a class="btn btn-primary" asp-controller="ExpenseCategory" asp-action="Create"><i class="bi bi-plus-lg"></i></a>
+            </div>
+        </div>
+        <table class="table table-hover table-bordered table-striped">
+            <thead class="table-light">
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.CategoryName)</th>
+                    <th style="width:130px" class="text-center">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(x => c.CategoryName)</td>
+                        <td class="text-center">
+                            <a class="btn btn-success" asp-controller="ExpenseCategory" asp-action="Edit" asp-route-id="@c.ExpenseCategoryId"><i class="bi bi-pencil"></i></a>
+                            <a class="btn btn-danger" asp-controller="ExpenseCategory" asp-action="Delete" asp-route-id="@c.ExpenseCategoryId"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section styles {
+    <link href="~/libs/icons/font/bootstrap-icons.css" rel="stylesheet" />
+}
+
+
